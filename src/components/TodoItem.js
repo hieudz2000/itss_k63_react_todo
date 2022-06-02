@@ -14,7 +14,7 @@ function TodoItem( {item} ) {
 
     }
     else{
-    document.getElementById(item.key).classList.remove("has-text-grey-light");
+      document.getElementById(item.key).classList.remove("has-text-grey-light");
 
     }
   
