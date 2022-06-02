@@ -32,6 +32,7 @@ function Todo() {
       putItems(prev=> [...prev,{ key: getKey(), text: event.target.value, done: false }]
       )
       console.log("enter")
+      event.target.value ="";
     }
      
   }
