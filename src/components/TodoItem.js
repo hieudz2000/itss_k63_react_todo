@@ -5,27 +5,16 @@
 　・チェックボックスにチェックが入っているかアイテムをグレーアウトする
 */
  
-function TodoItem( {item} ) {
-  var a ;
-  const handle = (e) =>{
-    let check = e.target.checked;
-    if (check == true){
-      document.getElementById(item.key).classList.add("has-text-grey-light");
 
-    }
-    else{
-      document.getElementById(item.key).classList.remove("has-text-grey-light");
-
-    }
-  
-  }
+ 
+  function TodoItem({ item,handleClick }) {
   return (
-   
-    <label className="panel-block " id ={item.key}>
-      <input type="checkbox"  onClick={handle} />
+    <label className={`panel-block ${item.done ? 'selected' : ''}`}>
+      <input type="checkbox" checked={item.done}  onClick={()=> handleClick(item)}/>
       {item.text}
     </label>
   );
 }
+
 
 export default TodoItem;
